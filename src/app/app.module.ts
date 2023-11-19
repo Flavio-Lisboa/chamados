@@ -12,11 +12,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OpcoesComponent } from './opcoes/opcoes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    OpcoesComponent
   ],
   imports: [
     BrowserModule,
