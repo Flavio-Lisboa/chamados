@@ -10,3 +10,9 @@
     width: 20vw;
     gap: 40px;
 }
+
+mat-card {
+    height: auto;
+    padding: 4em;
+    background-color: #D3D3D3;
+}
