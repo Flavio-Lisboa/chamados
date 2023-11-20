@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-card>
+        <h1 class="titulo">Abertura de chamado</h1>
+        <form [formGroup]="formChamados">
+            <div class="sol-dep">
+                <mat-form-field>
+                    <mat-label>Solicitante</mat-label>
+                    <input matInput formControlName="solicitante">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Departamento</mat-label>
+                    <mat-select>
+                        <mat-option value="...">TI</mat-option>
+                        <mat-option value="...">Comercial</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="titulo-desc">
+                <mat-form-field class="field-titulo">
+                    <mat-label>Título</mat-label>
+                    <input matInput formControlName="titulo">
+                </mat-form-field>
+                <mat-form-field class="field-desc">
+                    <mat-label>Descrição do chamado</mat-label>
+                    <input matInput formControlName="descChamado">
+                </mat-form-field>
+                <mat-form-field class="field-desc">
+                    <mat-label>Número do chamado</mat-label>
+                    <input matInput formControlName="numChamado">
+                </mat-form-field>
+            </div>
+        </form>
+        <div class="botoes">
+            <button mat-stroked-button (click)="emitir()">Salvar</button>
+            <button mat-stroked-button>Cancelar</button>
+        </div>
+    </mat-card>
+</div>
