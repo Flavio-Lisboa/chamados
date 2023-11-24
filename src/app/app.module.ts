@@ -14,13 +14,17 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OpcoesComponent } from './opcoes/opcoes.component';
 import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.component';
+import { EncerrarChamadoComponent } from './encerrar-chamado/encerrar-chamado.component';
+import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     OpcoesComponent,
-    AberturaChamadoComponent
+    AberturaChamadoComponent,
+    AcompanharChamadoComponent,
+    EncerrarChamadoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,6 @@ import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.co
     MatCheckboxModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatInputModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

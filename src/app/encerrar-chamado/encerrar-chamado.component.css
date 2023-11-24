@@ -5,35 +5,33 @@
     height: 100vh;
 }
 
+mat-card {
+    width: 40%;
+    padding: 2em;
+    background-color: #D3D3D3;
+}
+
+#motivo {
+    width: 20vw;
+}
+
+#coment {
+    width: 20vw;
+
+}
 form {
     display: grid;
     margin: 0 auto;
     gap: 20px;
 }
 
-mat-card {
-    width: 40%;
-    padding: 4em;
-    height: auto;
-    background-color: #D3D3D3;
-}
-
- .sol-dep {
+.checkbox {
     display: flex;
-    gap: 40px;
+    margin-bottom: 40px;
 }
 
-.titulo-desc {
-    display: grid;
-    gap: 40px;
-}
-
-.field-titulo {
-    width: 300px;
-}
-
-.field-desc {
-    width: 300px;
+#checkbox {
+    margin-left: 20px;
 }
 
 .botoes {
