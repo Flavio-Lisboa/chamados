@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         if (this.user !== null) {
           this.router.navigate(['/opcoes', this.user.id ]);
         } else {
-          alert('Esse usuário n ão existe');
+          alert('Este usuário não existe');
         } 
       })
     ).subscribe();

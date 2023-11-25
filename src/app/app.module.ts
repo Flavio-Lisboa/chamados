@@ -21,6 +21,9 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     CadastroComponent
   ],
   imports: [
+    NgxMaskModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -13,7 +13,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Telefone</mat-label>
-                <input matInput formControlName="telefone">
+                <input matInput formControlName="telefone" mask="(00) 0000-0000||(00) 0 0000-0000">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Senha</mat-label>
@@ -30,7 +30,14 @@
                   <mat-option value="Operacional">Operacional</mat-option>
                 </mat-select>
             </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nível de permissão</mat-label>
+                <mat-select formControlName="role">
+                  <mat-option value="USER">Usuário</mat-option>
+                  <mat-option value="ATENDENTE">Atendente</mat-option>
+                </mat-select>
+            </mat-form-field>
         </form> 
-        <button mat-raised-button>Confirmar</button>
+        <button (click)="post()" [disabled]="form.invalid" mat-raised-button>Confirmar</button>
     </mat-card>
 </div>

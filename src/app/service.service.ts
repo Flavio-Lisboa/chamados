@@ -17,4 +17,8 @@ export class ServiceService {
   public userData(id: any) {
     return this.http.get(`${this.route}user?id=${id}`);
   }
+
+  public saveUser(user: any) {
+    return this.http.post(`${this.route}user`, user);
+  }
 }

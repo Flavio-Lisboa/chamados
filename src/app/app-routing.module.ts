@@ -8,12 +8,13 @@ import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-cham
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'opcoes/:id', component: OpcoesComponent},
   {path: 'chamados', component: AberturaChamadoComponent},
   {path: 'encerrar-chamados', component: EncerrarChamadoComponent},
   {path: 'acompanhar-chamados', component: AcompanharChamadoComponent},
   {path: 'cadastro', component: CadastroComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 
 @NgModule({
