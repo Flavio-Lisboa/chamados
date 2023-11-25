@@ -18,6 +18,9 @@ import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.co
 import { EncerrarChamadoComponent } from './encerrar-chamado/encerrar-chamado.component';
 import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     OpcoesComponent,
     AberturaChamadoComponent,
     AcompanharChamadoComponent,
-    EncerrarChamadoComponent
+    EncerrarChamadoComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
-    EditorModule
+    EditorModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

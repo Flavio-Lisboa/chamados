@@ -5,13 +5,15 @@ import { OpcoesComponent } from './opcoes/opcoes.component';
 import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.component';
 import { EncerrarChamadoComponent } from './encerrar-chamado/encerrar-chamado.component';
 import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'opcoes', component: OpcoesComponent},
+  {path: 'opcoes/:id', component: OpcoesComponent},
   {path: 'chamados', component: AberturaChamadoComponent},
   {path: 'encerrar-chamados', component: EncerrarChamadoComponent},
-  {path: 'acompanhar-chamados', component: AcompanharChamadoComponent}
+  {path: 'acompanhar-chamados', component: AcompanharChamadoComponent},
+  {path: 'cadastro', component: CadastroComponent},
 ];
 
 @NgModule({

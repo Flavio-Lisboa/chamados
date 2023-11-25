@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card>
+        <h1>Cadastro</h1>
+
+        <form [formGroup]="form">
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Telefone</mat-label>
+                <input matInput formControlName="telefone">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput formControlName="password">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Departamento</mat-label>
+                <mat-select formControlName="departamento">
+                  <mat-option value="TI">TI</mat-option>
+                  <mat-option value="Administrativo">Administrativo</mat-option>
+                  <mat-option value="Financeiro">Financeiro</mat-option>
+                  <mat-option value="RH">RH</mat-option>
+                  <mat-option value="Comercial">Comercial</mat-option>
+                  <mat-option value="Operacional">Operacional</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form> 
+        <button mat-raised-button>Confirmar</button>
+    </mat-card>
+</div>

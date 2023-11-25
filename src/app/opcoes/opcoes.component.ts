@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { finalize, tap } from 'rxjs';
 
 @Component({
   selector: 'app-opcoes',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpcoesComponent implements OnInit {
 
-  constructor() { }
+  isLoading = true;
+  user: any;
+
+  constructor(private service: ServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.login();
   }
 
+  login() {
+    this.service.userData(this.route.snapshot.paramMap.get('id')).pipe(
+      tap((res:any) => this.user = res),
+      finalize(() => this.isLoading = false)  
+    ).subscribe();
+  }
 }
