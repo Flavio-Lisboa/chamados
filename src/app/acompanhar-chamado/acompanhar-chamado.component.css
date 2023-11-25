@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+mat-card {
+    width: 40%;
+    padding: 2em;
+    background-color: #D3D3D3;
+}
+
+#chamado {
+    margin-left: 20px;
+}

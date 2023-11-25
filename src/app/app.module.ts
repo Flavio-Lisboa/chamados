@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon'
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -35,6 +36,7 @@ import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-cham
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
   ],
