@@ -20,18 +20,15 @@
                     <mat-label>Título</mat-label>
                     <input matInput formControlName="titulo">
                 </mat-form-field>
-                <mat-form-field class="field-desc">
-                    <mat-label>Descrição do chamado</mat-label>
-                    <input matInput formControlName="descChamado">
-                </mat-form-field>
-                <mat-form-field class="field-desc">
-                    <mat-label>Número do chamado</mat-label>
-                    <input matInput formControlName="numChamado">
-                </mat-form-field>
+                
+                <editor formControlName="descChamado" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf">
+
+                </editor>
+                
             </div>
         </form>
         <div class="botoes">
-            <button mat-stroked-button (click)="emitir()">
+            <button mat-stroked-button (click)="salvar()">
                 <mat-icon>save</mat-icon> Salvar
             </button>
             <button mat-stroked-button>

@@ -12,8 +12,7 @@ export class AberturaChamadoComponent implements OnInit {
     solicitante: ['', Validators.required],
     departamento: ['', Validators.required],
     titulo: [''],
-    descChamado: [''],
-    numChamado: []
+    descChamado: ['']
   });
 
   constructor(private fb: FormBuilder) { }
@@ -21,7 +20,7 @@ export class AberturaChamadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emitir() {
+  salvar() {
     console.log(this.formChamados.value);
   }
 }

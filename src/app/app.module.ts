@@ -17,6 +17,7 @@ import { OpcoesComponent } from './opcoes/opcoes.component';
 import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.component';
 import { EncerrarChamadoComponent } from './encerrar-chamado/encerrar-chamado.component';
 import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-cham
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
