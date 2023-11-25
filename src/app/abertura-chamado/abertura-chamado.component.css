@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    display: grid;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+mat-card {
+    width: 40%;
+    padding: 4em;
+    height: auto;
+    background-color: #D3D3D3;
+}
+
+ .sol-dep {
+    display: flex;
+    gap: 40px;
+}
+
+.titulo-desc {
+    display: grid;
+    gap: 40px;
+}
+
+.field-titulo {
+    width: 300px;
+}
+
+.field-desc {
+    width: 300px;
+}
+
+.botoes {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
