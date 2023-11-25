@@ -14,8 +14,13 @@ form {
 mat-card {
     width: 40%;
     padding: 4em;
-    height: auto;
+    height: 80%;
     background-color: #D3D3D3;
+}
+
+editor {
+    height: auto;
+    width: auto;
 }
 
  .sol-dep {

@@ -14,7 +14,7 @@ export class AberturaChamadoComponent implements OnInit {
     titulo: [''],
     descChamado: ['']
   });
-
+  
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {

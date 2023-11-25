@@ -12,12 +12,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OpcoesComponent } from './opcoes/opcoes.component';
 import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.component';
-import { EncerrarChamadoComponent } from './encerrar-chamado/encerrar-chamado.component';
 import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
+
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { TabelaChamadosComponent } from './tabela-chamados/tabela-chamados.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     OpcoesComponent,
     AberturaChamadoComponent,
     AcompanharChamadoComponent,
-    EncerrarChamadoComponent
+    TabelaChamadosComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
-    EditorModule
+    EditorModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
