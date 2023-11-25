@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+mat-card {
+    width: 20%;
+    padding: 4em;
+    background-color: #D3D3D3;
+}
+
+form {
+    display: grid;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+button {
+    margin-top: 1em;
+    background-color: #FFF;
+    color: #000;
+}

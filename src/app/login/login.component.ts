@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServiceService } from '../service.service';
+import { finalize, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +15,23 @@ export class LoginComponent implements OnInit {
     matricula: ['', Validators.required],
     senha: ['', Validators.required]
   })
+  user: any;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    console.log(this.form.value)
+    this.service.login(this.form.get('matricula')?.value).pipe(
+      tap((res:any) => this.user = res),
+      finalize(() => {
+        if (this.user !== null) {
+          this.router.navigate(['/opcoes', this.user.id ]);
+        } else {
+          alert('Este usuário não existe');
+        } 
+      })
+    ).subscribe();
   }
 }

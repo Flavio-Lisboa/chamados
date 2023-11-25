@@ -1,9 +1,15 @@
 <div class="container">
-    <mat-card>
-        <div class="botoes">
-            <button mat-stroked-button color="basic">Abrir chamado</button>
-            <button mat-stroked-button color="basic">Acompanhar chamado</button>
-            <button mat-stroked-button color="basic">Encerrar chamado</button>
-        </div>
-    </mat-card>
+    <mat-spinner *ngIf="isLoading; else notLoading"></mat-spinner>
+    <ng-template #notLoading>
+        <mat-card>
+            <div class="botoes" *ngIf="user.role === 'USER'">
+                <button mat-stroked-button color="basic">Abrir chamado</button>
+                <button mat-stroked-button color="basic">Acompanhar chamados</button>
+                <button mat-stroked-button color="basic">Encerrar chamado</button>
+            </div>
+            <div class="botoes" *ngIf="user.role === 'ATENDENTE'">
+                <button mat-stroked-button color="basic">Acompanhar chamados</button>
+            </div>
+        </mat-card>
+    </ng-template>
 </div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,9 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OpcoesComponent } from './opcoes/opcoes.component';
 import { AberturaChamadoComponent } from './abertura-chamado/abertura-chamado.component';
 import { AcompanharChamadoComponent } from './acompanhar-chamado/acompanhar-chamado.component';
-
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { TabelaChamadosComponent } from './tabela-chamados/tabela-chamados.component';
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -29,8 +33,10 @@ import { TabelaChamadosComponent } from './tabela-chamados/tabela-chamados.compo
     AberturaChamadoComponent,
     AcompanharChamadoComponent,
     TabelaChamadosComponent,
+    CadastroComponent,
   ],
   imports: [
+    NgxMaskModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,6 +49,8 @@ import { TabelaChamadosComponent } from './tabela-chamados/tabela-chamados.compo
     MatButtonModule,
     ReactiveFormsModule,
     EditorModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
     MatTableModule
   ],
   providers: [],
