@@ -23,6 +23,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { TabelaChamadosComponent } from './tabela-chamados/tabela-chamados.component';
+import { TabelaAcompanharChamadosComponent } from './tabela-acompanhar-chamados/tabela-acompanhar-chamados.component';
 
 export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
@@ -35,6 +36,7 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     AcompanharChamadoComponent,
     TabelaChamadosComponent,
     CadastroComponent,
+    TabelaAcompanharChamadosComponent
   ],
   imports: [
     NgxMaskModule.forRoot(),
