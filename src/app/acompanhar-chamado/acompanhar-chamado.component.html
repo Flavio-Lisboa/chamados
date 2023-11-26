@@ -1,15 +1,49 @@
 <div class="container">
     <mat-card>
         <form [formGroup]="formAcompanharChamado">
-            <div>
+            <div class="identificacao">
                 <mat-form-field>
-                    <mat-label>Insira o número do chamado</mat-label>
-                    <input matInput formControlName="numChamado">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nomeUsuario">
                 </mat-form-field>
-                <button id="chamado" mat-stroked-button>
-                    <mat-icon>search</mat-icon>Pesquisar
-                </button>    
+                <mat-form-field>
+                    <mat-label>Telefone</mat-label>
+                    <input matInput formControlName="telUsuario">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Data criação</mat-label>
+                    <input matInput formControlName="dataCriacao">
+                </mat-form-field>
+            </div>
+            <div class="dadosChamado">
+                <mat-form-field>
+                    <mat-label>Título</mat-label>
+                    <input matInput formControlName="titulo">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Status do chamado</mat-label>
+                    <mat-select>
+                        <mat-option value="">EM ESPERA</mat-option>
+                        <mat-option value="">EM ANDAMENTO</mat-option>
+                        <mat-option value="">CONCLUÍDO</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Atendente</mat-label>
+                    <input matInput formControlName="atendente">
+                </mat-form-field>
             </div>
         </form>
+        <div class="botoes">
+            <button mat-stroked-button>
+                <mat-icon>save</mat-icon> Salvar
+            </button>
+            <button mat-stroked-button>
+                <mat-icon>cancel</mat-icon> Cancelar
+            </button>
+            <button mat-stroked-button color="warn">
+                <mat-icon>cancel</mat-icon> Cancelar chamado
+              </button>
+        </div>
     </mat-card>
 </div>

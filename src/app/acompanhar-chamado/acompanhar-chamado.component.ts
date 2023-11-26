@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-acompanhar-chamado',
@@ -9,10 +9,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class AcompanharChamadoComponent implements OnInit {
 
   formAcompanharChamado: FormGroup = this.fb.group({
-    numChamado: [''],
-    comentario: [''],
-    responderAtendente: [''],
-    encerrarChamado: ['']
+    titulo: [''],
+    nomeUsuario: [''],
+    descricao: [''],
+    dataCriacao: ['', Validators.required],
+    status: [''],
+    atendente: [''],
+    telUsuario: ['']
   })
   constructor(private fb: FormBuilder) { }
 
