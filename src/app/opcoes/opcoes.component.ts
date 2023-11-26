@@ -16,10 +16,10 @@ export class OpcoesComponent implements OnInit {
   constructor(private service: ServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.login();
+    this.userData();
   }
 
-  login() {
+  userData() {
     this.service.userData(this.route.snapshot.paramMap.get('id')).pipe(
       tap((res:any) => this.user = res),
       finalize(() => this.isLoading = false)  

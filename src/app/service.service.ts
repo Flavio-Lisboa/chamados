@@ -21,4 +21,12 @@ export class ServiceService {
   public saveUser(user: any) {
     return this.http.post(`${this.route}user`, user);
   }
+
+  public saveChamado(chamado: any) {
+    return this.http.post(`${this.route}chamados`, chamado);
+  }
+
+  public getUserChamados(userId: any) {
+    return this.http.get(`${this.route}chamados/users/${userId}`);
+  }
 }
