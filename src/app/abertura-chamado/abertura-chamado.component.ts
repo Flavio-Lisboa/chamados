@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServiceService } from '../service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { finalize, tap } from 'rxjs';
 
 @Component({
   selector: 'app-abertura-chamado',
@@ -8,19 +11,45 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AberturaChamadoComponent implements OnInit {
 
-  formChamados: FormGroup = this.fb.group({
-    solicitante: ['', Validators.required],
+  formChamado: FormGroup = this.fb.group({
+    solicitante: [{value: '', disabled: true}],
+    solicitanteId: [''],
     departamento: ['', Validators.required],
-    titulo: [''],
-    descChamado: ['']
+    titulo: ['', Validators.required],
+    descricao: ['', Validators.required]
   });
+
+  user: any;
+  isLoading = true;
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: ServiceService, private route: ActivatedRoute, private router: Router) {     this.userData();
+  }
 
   ngOnInit(): void {
   }
 
+  userData() {
+    this.service.userData(this.route.snapshot.paramMap.get('id')).pipe(
+      tap((res:any) => this.user = res),
+      finalize(() => {  
+        console.log(this.user)
+         this.isLoading = false;
+         this.formChamado.patchValue({
+          solicitante: this.user.nome,
+          solicitanteId: this.user.id
+         })
+      })  
+    ).subscribe();
+  }
+
   salvar() {
-    console.log(this.formChamados.value);
+    this.service.saveChamado(this.formChamado.value).pipe(
+      finalize(() => {
+        alert('Chamado criado com sucesso!');
+        setTimeout(() => {
+          this.router.navigate(['/tabela', this.user.id])
+        }, 1000);
+      })
+    ).subscribe();
   }
 }

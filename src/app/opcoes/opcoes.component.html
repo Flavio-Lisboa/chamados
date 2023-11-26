@@ -3,8 +3,8 @@
     <ng-template #notLoading>
         <mat-card>
             <div class="botoes" *ngIf="user.role === 'USER'">
-                <button mat-stroked-button color="basic">Abrir chamado</button>
-                <button mat-stroked-button color="basic">Acompanhar chamados</button>
+                <button mat-stroked-button color="basic" routerLink="/chamados/{{user.id}}">Abrir chamado</button>
+                <button mat-stroked-button color="basic" routerLink="/tabela/{{user.id}}">Acompanhar chamados</button>
                 <button mat-stroked-button color="basic">Encerrar chamado</button>
             </div>
             <div class="botoes" *ngIf="user.role === 'ATENDENTE'">

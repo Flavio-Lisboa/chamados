@@ -1,38 +1,38 @@
 <div class="container">
     <mat-card>
         <h1 class="titulo">Abertura de chamado</h1>
-        <form [formGroup]="formChamados">
+        <form [formGroup]="formChamado">
             <div class="sol-dep">
+                <div class="titulo-desc">
+                    <mat-form-field class="field-titulo">
+                        <mat-label>Título</mat-label>
+                        <input matInput formControlName="titulo">
+                    </mat-form-field>
+                </div>
                 <mat-form-field>
                     <mat-label>Solicitante</mat-label>
                     <input matInput formControlName="solicitante">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Departamento</mat-label>
-                    <mat-select>
-                        <mat-option value="...">TI</mat-option>
-                        <mat-option value="...">Comercial</mat-option>
+                    <mat-select formControlName="departamento">
+                        <mat-option value="TI">TI</mat-option>
+                        <mat-option value="Administrativo">Administrativo</mat-option>
+                        <mat-option value="Financeiro">Financeiro</mat-option>
+                        <mat-option value="RH">RH</mat-option>
+                        <mat-option value="Comercial">Comercial</mat-option>
+                        <mat-option value="Operacional">Operacional</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div class="titulo-desc">
-                <mat-form-field class="field-titulo">
-                    <mat-label>Título</mat-label>
-                    <input matInput formControlName="titulo">
-                </mat-form-field>
-            </div>
-
-            <editor formControlName="descChamado" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf">
-
-            </editor>
-
+            <editor formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf"></editor>
         </form>
         <div class="botoes">
-            <button mat-stroked-button (click)="salvar()">
-                <mat-icon>save</mat-icon> Salvar
-            </button>
             <button mat-stroked-button>
                 <mat-icon>cancel</mat-icon> Cancelar
+            </button>
+            <button mat-stroked-button [disabled]="formChamado.invalid" (click)="salvar()">
+                <mat-icon>save</mat-icon> Salvar
             </button>
         </div>
     </mat-card>
