@@ -15,6 +15,7 @@ mat-card {
     margin-top: 20px;
     justify-content: space-between;
 }
+
 .identificacao {
     display: flex;
     justify-content: space-between;
@@ -23,4 +24,9 @@ mat-card {
 .dadosChamado {
     display: flex;
     justify-content: space-between;
+}
+
+.voltar_salvar_btn {
+    display: flex;
+    gap: 10px;
 }

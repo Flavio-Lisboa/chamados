@@ -32,7 +32,6 @@ export class AberturaChamadoComponent implements OnInit {
     this.service.userData(this.route.snapshot.paramMap.get('id')).pipe(
       tap((res:any) => this.user = res),
       finalize(() => {  
-        console.log(this.user)
          this.isLoading = false;
          this.formChamado.patchValue({
           solicitante: this.user.nome,

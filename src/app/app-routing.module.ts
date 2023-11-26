@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'opcoes/:id', component: OpcoesComponent},
   {path: 'chamados/:id', component: AberturaChamadoComponent},
-  {path: 'acompanhar-chamados/:id', component: AcompanharChamadoComponent},
+  {path: 'acompanhar-chamados/:id/user/:userId', component: AcompanharChamadoComponent},
   {path: 'tabela/:id', component: TabelaChamadosComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'login'}

@@ -29,4 +29,16 @@ export class ServiceService {
   public getUserChamados(userId: any) {
     return this.http.get(`${this.route}chamados/users/${userId}`);
   }
+
+  public getChamado(chamadoId: any) {
+    return this.http.get(`${this.route}chamados/${chamadoId}`);
+  }
+
+  public updateChamado(chamadoId: any, data: any) {
+    return this.http.put(`${this.route}chamados/${chamadoId}`, data);
+  }
+
+  public deleteChamado(chamadoId: any) {
+    return this.http.delete(`${this.route}chamados/${chamadoId}`);
+  }
 }

@@ -21,6 +21,7 @@ export class TabelaChamadosComponent implements OnInit {
  
   displayedColumns: string[] = ['codigo', 'nome', 'titulo', 'criado', 'status', 'atendente'];
   dataSource: any;
+  userId = this.route.snapshot.paramMap.get('id');
 
   constructor(private service: ServiceService, private route: ActivatedRoute) { }
 
@@ -29,7 +30,7 @@ export class TabelaChamadosComponent implements OnInit {
   }
 
   getUserChamados() {
-    this.service.getUserChamados(this.route.snapshot.paramMap.get('id')).pipe(
+    this.service.getUserChamados(this.userId).pipe(
       tap((res:any) => this.dataSource = res)
     ).subscribe();
   }

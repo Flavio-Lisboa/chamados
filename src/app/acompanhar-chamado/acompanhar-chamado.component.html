@@ -9,7 +9,7 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Telefone</mat-label>
-                    <input matInput formControlName="telUsuario">
+                    <input matInput mask="(00) 0000-0000||(00) 0 0000-0000" formControlName="telUsuario">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Data criação</mat-label>
@@ -23,10 +23,10 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Status do chamado</mat-label>
-                    <mat-select>
-                        <mat-option value="">EM ESPERA</mat-option>
-                        <mat-option value="">EM ANDAMENTO</mat-option>
-                        <mat-option value="">CONCLUÍDO</mat-option>
+                    <mat-select formControlName="status">
+                        <mat-option value="EM_ESPERA">Em espera</mat-option>
+                        <mat-option value="EM_ANDAMENTO">Em andamento</mat-option>
+                        <mat-option value="FINALIZADO">Finalizado</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field>
@@ -34,19 +34,21 @@
                     <input matInput formControlName="atendente">
                 </mat-form-field>
             </div>
-            <editor formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf"></editor>
+            <editor [disabled]="true" formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf"></editor>
 
         </form>
         <div class="botoes">
-            <button mat-stroked-button>
-                <mat-icon>save</mat-icon> Salvar
-            </button>
-            <button mat-stroked-button>
-                <mat-icon>cancel</mat-icon> Cancelar
-            </button>
-            <button mat-stroked-button color="warn">
+            <button (click)="deleteChamado()" *ngIf="user.role === 'USER' && chamado.status !== 'FINALIZADO'" mat-stroked-button color="warn">
                 <mat-icon>cancel</mat-icon> Cancelar chamado
-              </button>
+            </button>
+            <div class="voltar_salvar_btn">
+                <button routerLink="/tabela/{{userId}}" mat-stroked-button>
+                    <mat-icon>reply</mat-icon> Voltar
+                </button>
+                <button (click)="updateChamado()" *ngIf="user.role !== 'USER'" mat-stroked-button>
+                    <mat-icon>save</mat-icon> Salvar
+                </button>
+            </div>
         </div>
     </mat-card>
 </div>

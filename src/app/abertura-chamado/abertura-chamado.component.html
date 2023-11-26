@@ -28,7 +28,7 @@
             <editor formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf"></editor>
         </form>
         <div class="botoes">
-            <button mat-stroked-button>
+            <button routerLink="/opcoes/{{user.id}}" mat-stroked-button>
                 <mat-icon>cancel</mat-icon> Cancelar
             </button>
             <button mat-stroked-button [disabled]="formChamado.invalid" (click)="salvar()">
