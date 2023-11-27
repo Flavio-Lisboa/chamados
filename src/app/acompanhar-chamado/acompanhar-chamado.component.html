@@ -34,7 +34,7 @@
                     <input matInput formControlName="atendente">
                 </mat-form-field>
             </div>
-            <editor [disabled]="true" formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf"></editor>
+            <editor [disabled]="true" formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf" [init]="{max_height: 320}"></editor>
 
         </form>
         <div class="botoes">
@@ -42,10 +42,15 @@
                 <mat-icon>cancel</mat-icon> Cancelar chamado
             </button>
             <div class="voltar_salvar_btn">
-                <button routerLink="/tabela/{{userId}}" mat-stroked-button>
+                <button *ngIf="user.role !== 'USER', else userButton" routerLink="/acompanhar-chamados/{{userId}}" mat-stroked-button>
                     <mat-icon>reply</mat-icon> Voltar
                 </button>
-                <button (click)="updateChamado()" *ngIf="user.role !== 'USER'" mat-stroked-button>
+                <ng-template #userButton>
+                    <button routerLink="/tabela/{{userId}}" mat-stroked-button>
+                        <mat-icon>reply</mat-icon> Voltar
+                    </button>
+                </ng-template>
+                <button (click)="updateChamado()" *ngIf="user.role !== 'USER' && chamado.status !== 'FINALIZADO'" mat-stroked-button>
                     <mat-icon>save</mat-icon> Salvar
                 </button>
             </div>

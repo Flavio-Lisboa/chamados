@@ -7,7 +7,7 @@
                 <button mat-stroked-button color="basic" routerLink="/tabela/{{user.id}}">Acompanhar chamados</button>
             </div>
             <div class="botoes" *ngIf="user.role === 'ATENDENTE'">
-                <button mat-stroked-button color="basic">Acompanhar chamados</button>
+                <button mat-stroked-button color="basic" routerLink="/acompanhar-chamados/{{user.id}}">Acompanhar chamados</button>
             </div>
         </mat-card>
     </ng-template>

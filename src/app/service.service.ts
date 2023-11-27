@@ -41,4 +41,8 @@ export class ServiceService {
   public deleteChamado(chamadoId: any) {
     return this.http.delete(`${this.route}chamados/${chamadoId}`);
   }
+
+  public chamadosByAtendenteDepartamento(departamento: any) {
+    return this.http.get(`${this.route}chamados/atendentes?departamento=${departamento}`);
+  }
 }

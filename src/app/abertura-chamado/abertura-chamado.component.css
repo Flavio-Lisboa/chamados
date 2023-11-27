@@ -17,11 +17,6 @@ mat-card {
     background-color: #D3D3D3;
 }
 
-editor {
-    height: auto;
-    width: auto;
-}
-
 .sol-dep {
     display: flex;
     gap: 40px;
