@@ -35,8 +35,37 @@
                 </mat-form-field>
             </div>
             <editor [disabled]="true" formControlName="descricao" apiKey="mlxgjx1u6yuxdf28eokp3f9gwyqixz0glzrwzjrb9b6fvxaf" [init]="{max_height: 320}"></editor>
-
         </form>
+
+        <form class="addComent" [formGroup]="formComentario">
+            <mat-form-field>
+                <mat-label>Adicione um comentário</mat-label>
+                <input matInput formControlName="comentario">
+            </mat-form-field>
+            <div>
+                <button (click)="addComentario()" mat-stroked-button>
+                    <mat-icon>save</mat-icon> Adicionar
+                </button>
+            </div>
+        </form>
+
+        <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="comentario">
+                <th mat-header-cell *matHeaderCellDef> Comentário </th>
+                <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+
         <div class="botoes">
             <button (click)="deleteChamado()" *ngIf="user.role === 'USER' && chamado.status !== 'FINALIZADO'" mat-stroked-button color="warn">
                 <mat-icon>cancel</mat-icon> Cancelar chamado

@@ -45,4 +45,12 @@ export class ServiceService {
   public chamadosByAtendenteDepartamento(departamento: any) {
     return this.http.get(`${this.route}chamados/atendentes?departamento=${departamento}`);
   }
+
+  public addComentario(comentario: any) {
+    return this.http.post(`${this.route}fluxo`, comentario);
+  }
+
+  public getComentario(chamadoId: any) {
+    return this.http.get(`${this.route}fluxo/${chamadoId}`);
+  }
 }

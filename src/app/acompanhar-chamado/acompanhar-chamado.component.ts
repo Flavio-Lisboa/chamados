@@ -26,9 +26,20 @@ export class AcompanharChamadoComponent implements OnInit {
     status: ['']
   })
 
+
+  formComentario: FormGroup = this.fb.group({
+    userId: [''],
+    atendenteId: [''],
+    comentario: [''],
+    chamadoId: ['']
+  });
+
   chamado: any;
   userId = this.route.snapshot.paramMap.get('userId');
   user: any;
+
+  displayedColumns: string[] = ['nome', 'comentario'];
+  dataSource: any;
 
   constructor(private fb: FormBuilder, private service: ServiceService, private route: ActivatedRoute, private router: Router) { }
 
@@ -47,7 +58,7 @@ export class AcompanharChamadoComponent implements OnInit {
   getChamado() {
     this.service.getChamado(this.route.snapshot.paramMap.get('id')).pipe(
       tap((res:any) => this.chamado = res),
-      finalize(() => this. preencherForm())
+      finalize(() => { this.preencherForm(), this.getComentarios()})
     ).subscribe();
   }
 
@@ -96,5 +107,33 @@ export class AcompanharChamadoComponent implements OnInit {
         }, 1000);
       })
     ).subscribe();
+  }
+
+  addComentario() {
+    if (this.user.role === 'USER') {
+      this.formComentario.patchValue({
+        userId: this.userId,
+        chamadoId: this.chamado.id
+      });
+    } else {
+      this.formComentario.patchValue({
+        atendenteId: this.userId,
+        chamadoId: this.chamado.id
+      });
+    }
+   
+    this.service.addComentario(this.formComentario.value).pipe(
+      finalize(() => { this.getComentarios(), this.limpaCampo() } )
+    ).subscribe();
+  }
+
+  getComentarios() {
+    this.service.getComentario(this.chamado.id).pipe(
+      tap((res:any) => this.dataSource = res)
+    ).subscribe();
+  }
+
+  limpaCampo() {
+    this.formComentario.patchValue({comentario: ''})
   }
 }
